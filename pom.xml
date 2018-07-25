@@ -35,7 +35,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>b4.Bai4</mainClass>
+							<mainClass>bai4.B4</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
