@@ -1,5 +1,4 @@
 package bai4;
-
 import static spark.Spark.get;
 
 import java.util.ArrayList;
@@ -20,11 +19,12 @@ import spark.Route;
 
 public class B4 {
 	public static void main(String[] args) {
-		/* Chinh sua tren client */
-		final LoadingCache<Integer, List<Integer>> primeCache = 
-				CacheBuilder.newBuilder().maximumSize(100)
-				.expireAfterWrite(20, TimeUnit.SECONDS).
-				expireAfterAccess(10, TimeUnit.SECONDS)
+		/*Chinh sua hop nhat client server*/
+		final LoadingCache<Integer, List<Integer>> primeCache =
+				CacheBuilder.newBuilder()
+				.maximumSize(100)
+				.expireAfterWrite(20, TimeUnit.SECONDS)
+				.expireAfterAccess(10, TimeUnit.SECONDS)
 				.build(new CacheLoader<Integer, List<Integer>>() {
 					@Override
 					public List<Integer> load(Integer n) throws Exception {
