@@ -19,7 +19,7 @@ import spark.Response;
 import spark.Route;
 public class B4 {
 	public static void main(String[] args) {
-/* Chinh sua hop nhat client va server*/
+/* Chinh sua tren server*/
 		final LoadingCache<Integer, List<Integer>> primeCache =
 				CacheBuilder.newBuilder()
 				.maximumSize(100)
