@@ -19,7 +19,7 @@ import spark.Response;
 import spark.Route;
 public class B4 {
 	public static void main(String[] args) {
-		/* Chinh sua hop nhat giua server & client */
+		/* Chinh sua tren client */
 		final LoadingCache<Integer, List<Integer>> primeCache =
 				CacheBuilder.newBuilder()
 				.maximumSize(100)
@@ -34,10 +34,11 @@ public class B4 {
 				});
 		final JSONObject jo = new JSONObject();
 		get("/prime","application/json",new Route() {
-			public Object handle(Request request, Response respone) throws Exception {
+			public Object handle(Request request, Response respone) 
+					throws Exception {
 				 Integer n = Integer.parseInt(request.queryParams("n"));
 				jo.put("prime",primeCache.get(n));
-				jo.put("prime",primeCache.get(n));
+			//	jo.put("prime",primeCache.get(n));
 				return "Cache Size: "+primeCache.size()+" "+jo.toJSONString();
 			}
 		});
