@@ -15,6 +15,7 @@ import spark.Route;
 
 public class B4 {
 	public static void main(String[] args) {
+		/*Chinh sua tren client*/
 		final LoadingCache<Integer, List<Integer>> primeCache =
 				CacheBuilder.newBuilder()
 				.expireAfterWrite(20, TimeUnit.SECONDS)
